@@ -2,18 +2,16 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "Home"
 theme = "kube"
-Paginate = 4
-
 
 [[menu.main]]
-    name = "Installing Hugo on Windows"
+    name = "1. First installing Hugo"
     weight = -100
-    url = "posts/firstpost/"
+    url = "/posts/firstpost/"
 [[menu.main]]
-    name = "Blog"
+    name = "2. Getting the static site to work"
     weight = -100
-    url = "/blog/"
+    url = "/posts/secondpost/"
 [[menu.main]]
-    name = "Faq"
-    weight = -100
-url = "/faq/"
+	name = "3. Fixing the files and additional notes"
+	weight = -100
+	url = "/posts/thirdpost/"
