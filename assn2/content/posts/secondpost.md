@@ -1,5 +1,5 @@
 ---
-title: "Building site"
+title: "Building the Site"
 date: 2018-02-22T18:00:21-05:00
 draft: true
 ---
@@ -16,13 +16,15 @@ Once hugo finishes generating the page it was recommended to use a theme.
 
 Adding the theme
 ======
-There is a directory of themes that hugo can use [over here](https://themes.gohugo.io)
-The theme I used was Kube, its directory is [here](https://themes.gohugo.io/kube/)
+There is a directory of themes that hugo can use [over here](https://themes.gohugo.io).
+The theme I used was Kube, its directory is [here](https://themes.gohugo.io/kube/).
 The directory tells us how to install Kube, this specific theme.
-The first step it tells us is to "mkdir themes" which is making another directory named themes - but using "newsite" created the themes folder already
+The first step it tells us is to "mkdir themes" which is making another directory named themes - but using "newsite" created the themes folder already.
 So I didn't have to input that into the command line. It then asks us to move into the folder which is just using "cd" to change directories.
+
 The last step was to input in the comannd line : 
-$ git clone https://github.com/jeblister/kube.git
+
+	$ git clone https://github.com/jeblister/kube.git
 
 This calls the theme to be downloaded into the themes folder.
 
@@ -41,4 +43,4 @@ Creating posts
 ------
 To create a post I would input "hugo new post" and then follow it with what it would be the file name. This would generate a folder within the content folder of the site.
 
-Inside the folder would be another folder titled "posts" and my first post would be located in the folder. I edited the file which would be used .md
+Inside the folder would be another folder titled "posts" and my first post would be located in the folder. I edited the file which would be end in .md

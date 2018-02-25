@@ -22,16 +22,15 @@ This file looks like this at the moment.
 	draft = false
 	+++
 	
-When I was trying to edit this file, if you place - - - instead of the +++ dividers, the site would no longer generate when I go to put "hugo server -D"
-So I assume that it only takes +++. I could not put any additional text into the index. The index page seems to be the same, as it requires the theme to be 
+When I was trying to edit this file, if you place - - - instead of the +++ dividers, the site would no longer generate when I go to put "hugo server -D". So I assume that it only takes +++. I could not put any additional text into the index. The index page seems to be the same, as it requires the theme to be 
 referenced to the page it was downloaded from and to give credit to the theme. Trying to edit any of the theme files caused GitBash to ask me to login to confirm if I was the creator of the theme.
 I couldn't do much with this index page in the end, the description would be the sub header and the title would be the larger bolded text.
 
 The config.toml file 
 ======
 
-I would've though the config file would've been in the layout folder but it is located within the other folders outside of themes.
-I can't remember if I dragged the file into the assn2 folder or if I created one from scratch. 
+I would've thought the config file would've been in the layout folder but it is located with the other folders outside of themes.
+I can't remember if I dragged the file into the assn2 folder, if I created one from scratch, or if it was already generated with the site. 
 
 Within the config.toml file held the buttons for the top. Some of these buttons read FAQ, Blog and so-on.
 
