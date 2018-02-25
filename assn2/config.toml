@@ -1,19 +1,14 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "The title is different I think"
+title = "Home"
 theme = "kube"
 Paginate = 4
-[Params]
-  RSSLink = "/index.xml"
-  author = "newpixcom" # add your company name
-  github = "" # add your github profile name
-  twitter = "" # add your twitter profile
-  email = "myemail@myaddress.xxx"
+
 
 [[menu.main]]
-    name = "Docs"
+    name = "Installing Hugo on Windows"
     weight = -100
-    url = "/docs/"
+    url = "posts/firstpost/"
 [[menu.main]]
     name = "Blog"
     weight = -100

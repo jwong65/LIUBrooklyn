@@ -1,5 +1,5 @@
 +++
-description= "Kube is a professional  and a responsive Hugo theme for developers and designers that offers a documentation section mixed with a landing page and a blog"
+description= "The learning process for getting Hugo, the static site generator working "
 title= "Fixed"
 draft = false
 +++
