@@ -3,7 +3,7 @@ title: "Additional Notes"
 date: 2018-02-22T18:00:26-05:00
 draft: true
 ---
-<h1> While trying to get the homepage working </h1>
+<h1>The _index.md file</h1>
 Within the folders of the site that was created by using "hugo new site" was a content folder. After creating my first post
 it created an additional folder inside the content that would be called posts and where subsequent posts were created.
 
@@ -49,7 +49,30 @@ and it doesn't exist.
 Another thing I found out was that these buttons were arranged alphabetically. I couldn't find a way to rearrange the buttons.
 Even by listing them differently than their alphabetically arranged would still result in the buttons arranged alphabetically from left to right.
 
-To get around this I just put 1. 2. 3. and it would be listed properly. I couldn't find anything in the README.txt file that said anything about it nor did a search help.
+To get around this I just put 1. 2. 3. and it would be listed properly. I couldn't find anything in the README.md file that said anything about it nor did a search help.
+
+Buttons problem
+------
+Another problem I found with the buttons was that I could not just put localhost:1313/posts/firstpost/ or secondpost/ etc. This would cause the link to not recognize localhost. That's why I kept the /posts/firstpost/ in the URL.
+
+From the first post labelled with 1. I could not get the buttons to the second or third buttons working. You would always have to go back to the **INDEX** page and then to the 2nd or 3rd page.
+The problem with it was that when you were in the first page or any other page trying to access a different one - other than index, it would cause : 
+
+For example from the first page trying to access the second page:
+
+	localhost:1313/posts/firsthost > localhost:1313/posts/firsthost/posts/secondpost/
+
+It would not recognize that it is a completely different page. This also happened when I was on the first page just clicking on the first page button again. It would give me 
+
+	localhost:1313/posts/firsthost/posts/firsthost/
+
+I tried using href, but that requires going to localhost, which the browser won't open.
+I don't even know what I did to fix it, I just tried deleting one of the buttons - which was Blogs. Then I re-added the third page from scratch.
+
+The buttons work now. If you're on the third post trying to access any other post it will correctly redirect into the other pages. I tried git status to see what was different, but GitBash didn't show me any changes.
+
+The rest of the config.toml file
+------
 
 	baseURL = "http://example.org/"
 	languageCode = "en-us"
