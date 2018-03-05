@@ -45,21 +45,21 @@ function initMap()
 		case 0:
 			map.setCenter(warsaw);
 			swapthepicture.src = "warsaw-zoo.jpg"
-			paragraph.innerHTML = "This is what happens."
+			paragraph.innerHTML = "Warsaw is in Poland. Even though the Warsaw Zoo was the first location I thought of, I have never been to Europe or Poland though."
 			document.getElementById("paragraph").style.color = "green";
 			paragraph.style.backgroundColor = "#f789"
 			break;
 		case 1:
 			map.setCenter(sydney);
 			swapthepicture.src = "sydney.jpg"
-			paragraph.innerHTML = "Sydney in Australia would be an interesting place to visit, but I have never visited Australia."
+			paragraph.innerHTML = "Sydney in Australia would be an interesting place to visit, but I have never visited Australia. I only thought of Sydney because of a recent card tournament."
 			document.getElementById("paragraph").style.color= "#254242";
 			paragraph.style.backgroundColor = "#8ff442"
 			break;
 		case 2:
 			map.setCenter(singapore);
 			swapthepicture.src = "singapore.jpg"
-			paragraph.innerHTML = "Singapore, I recall"
+			paragraph.innerHTML = "Singapore, I recall was noted for being one of the cleanest places in the world. There are a lot of laws that are related to the cleanliness. A quick search tells me that chewing gum is still banned there. The fines for littering are large as well."
 			document.getElementById("paragraph").style.color="#124ded"
 			paragraph.style.backgroundColor = "#b3cece"
 			break;
