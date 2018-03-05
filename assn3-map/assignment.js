@@ -12,4 +12,25 @@ function initMap()
 		zoom: 15, 
 		center: warsaw
 	});
+	var marker1 = new google.maps.Marker({
+			position: warsaw,
+			map: map,
+			title: 'Warsaw Zoo'
+	});
+	
+	marker1.addListener('click', () => clickCity(0));
 }
+	
+
+	function clickCity(cityId)
+	{
+		var pic = document.getElementById("pic")
+		console.log("A city has been clicked", cityId)
+		map.setZoom(15);
+		switch(cityId){
+		case 0:
+			map.setCenter(warsaw);
+			break;
+	}
+	}
+	
