@@ -53,14 +53,21 @@ function initMap()
 			map.setCenter(sydney);
 			swapthepicture.src = "sydney.jpg"
 			paragraph.innerHTML = "Sydney in Australia would be an interesting place to visit, but I have never visited Australia."
-			document.getElementById("paragraph").style.color= "red";
-			paragraph.style.backgroundColor = "#124"
+			document.getElementById("paragraph").style.color= "#254242";
+			paragraph.style.backgroundColor = "#8ff442"
 			break;
 		case 2:
 			map.setCenter(singapore);
 			swapthepicture.src = "singapore.jpg"
+			paragraph.innerHTML = "Singapore, I recall"
+			document.getElementById("paragraph").style.color="#124ded"
+			paragraph.style.backgroundColor = "#b3cece"
 			break;
 		}
 		
 	}
 	
+	function textchange()
+	{
+		document.getElementById("paragraph").style.color="#000000"
+	}
