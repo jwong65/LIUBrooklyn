@@ -6,17 +6,25 @@
 	<div>
 	</div>
 	<body>
-	<h1>This header better work</h1>
 	
-	<u1> WHAT IS THIS </u1>
+	<h1> Places I've never been to</h1>
 	
-	<div id="thismap" style="border: 3px solid red; height: 350px; width:450px"> 
+	<div id="thismap" style="border: 3px solid red; height: 400px; width:450px"> 
 	
 	</div>
-	<u1 id="places" style="font-size: 32px">
-		<li class ="active" onclick="clickCity(0)">Warsaw Zoo</li>
+	<u2 id="places" style="font-size: 32px">
+		
+		<button type="button"><li class ="active" onclick="clickCity(0)">Warsaw Zoo</li></button>
+		<button type="button"><li onclick="clickCity(1)">Sydney</li></button>
+		<button type="button"><li onclick="clickCity(2)">Singapore</li></button>
 	
-	</u1>
+	</u2>
+	<img id= "swapthepicture" src="warsaw-zoo.jpg" style="height: 400px; width: 550px">
+	
+	<p id="paragraph" onclick="paragraphisclicked()" style = "width:550px">
+		The Warsaw Zoo was the first place I could think of.
+	</p>
+	
 	<script src="assignment.js">
 	</script>
 	  
