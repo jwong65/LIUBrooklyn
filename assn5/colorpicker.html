@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<style>
+	#redwords
+	{
+	position: relative;
+	border: 1px solid red;
+	left: 25px;
+	}
+	#bluewords
+	{
+	position: relative;
+	border: 1px solid red;
+	left: 20px;
+	}
+	#greenwords
+	{
+	position: relative;
+	border: 1px solid red;
+	left: 11px;
+	}
+	</style>
+	
+	<body>
+	<h1>This is a test header</h1>
+	
+	<div id="boxofcolors"
+		style="float:left; width:250px; height:250px; background:#ffff66">
+	</div>
+	
+	<div id="redwords">
+	 Red:
+	<input type="text" id="redtext" value="100"	size="6">
+	<input type="range" id="redrange" value=100" min="0" max="255">
+	 </div>
+	 <div id="greenwords">
+	 Green:
+	 <input type="text" id="greentext" value="92" size="6">
+	 <input type="range" id="greenrange" value="92" size="6">
+	 </div>
+	 
+	<div id="bluewords">
+	Blue:
+	<input type="text" id="bluetext" value="159" size="6">
+	<input type="range" id="bluerange" value="159" min="0" max="255">
+	</div>
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="colorpicker.js"></script>
+	
+	</body>
+	
+</html>
