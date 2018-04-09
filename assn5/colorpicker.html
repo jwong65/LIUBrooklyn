@@ -33,20 +33,32 @@
 	<div id="redwords">
 	 Red:
 	<input type="text" id="redtext" value="100"	size="6">
-	<input type="range" id="redrange" value=100" min="0" max="255">
-	 </div>
-	 <div id="greenwords">
+	<input type="range" id="redrange" value="100" min="0" max="255">
+	</div>
+	
+	<div id="greenwords">
 	 Green:
 	 <input type="text" id="greentext" value="92" size="6">
-	 <input type="range" id="greenrange" value="92" size="6">
-	 </div>
+	 <input type="range" id="greenrange" value="92" size="6" min="0" max="255">
+	</div>
 	 
 	<div id="bluewords">
 	Blue:
 	<input type="text" id="bluetext" value="159" size="6">
 	<input type="range" id="bluerange" value="159" min="0" max="255">
 	</div>
+	<br>
 	
+	Hue:
+	<input type="range" id="hueslider" value="0" min="0" max="360">
+	<br>
+	Saturation:
+	<input type="range" id="satslider" value="0" min="0" max="100">
+	<br>
+	Light:
+	<input type="range" id="lightslider" value="0" min="0" max="100">
+	
+	<p id ="rgboutput">rgb()</p>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="colorpicker.js"></script>
