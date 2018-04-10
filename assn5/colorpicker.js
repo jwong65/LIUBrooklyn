@@ -17,10 +17,13 @@ function updatebox(){
 	const rgb = "RGB(" + red + "," + green + "," + blue +")"
 	console.log(rgb)
 	const hsl = "HSL(" + hue + "," + sat + "%," + light +"%)"
-
+	const hex = "Hex: #" + (red).toString(16) + (green).toString(16) +(blue).toString(16)
+	
+	
 	$("#boxofcolors")[0].style["background-color"]= rgb
+	$("#hexoutput").text(rgb)
 	$("#rgboutput").text(rgb)
-	$("#hsloutput").text(hsl)
+	$("#hsloutput").text(hex)
 	$("#redtext").val(red)
 	$("#redrange").val(red)
 	$("#huetext").val(hue)
