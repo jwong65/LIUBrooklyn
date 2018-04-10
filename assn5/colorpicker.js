@@ -17,7 +17,7 @@ function updatebox(){
 	const rgb = "RGB(" + red + "," + green + "," + blue +")"
 	console.log(rgb)
 	const hsl = "HSL(" + hue + "," + sat + "%," + light +"%)"
-	const hex = "Hex: #" + (red).toString(16) + (green).toString(16) +(blue).toString(16)
+	const hex = "#" + (red).toString(16).toUpperCase() + (green).toString(16).toUpperCase() +(blue).toString(16).toUpperCase()
 	
 	
 	$("#boxofcolors")[0].style["background-color"]= rgb
