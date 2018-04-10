@@ -14,9 +14,10 @@ function updatebox(){
 	red = rgbVec[0]
 	green = rgbVec[1]
 	blue = rgbVec[2]
-	const rgb = "rgb(" + red + "," + green + "," + blue +")"
+	const rgb = "RGB(" + red + "," + green + "," + blue +")"
 	console.log(rgb)
-	const hsl = "hsl(" + hue + "," + sat + "%," + light +"%)"
+	const hsl = "HSL(" + hue + "," + sat + "%," + light +"%)"
+	
 	$("#boxofcolors")[0].style["background-color"]= rgb
 	$("#rgboutput").text(rgb)
 	$("#hsloutput").text(hsl)
