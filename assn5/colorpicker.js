@@ -24,11 +24,11 @@ function updatebox(){
 	$("#hueslider").val(hue)
 	$("#greentext").val(green)
 	$("#greenrange").val(green)
-	$("#satwords").val(sat)
+	$("#sattext").val(sat)
 	$("#satslider").val(sat)
 	$("#bluetext").val(blue)
 	$("#bluerange").val(blue)
-	$("#lightwords").val(light)
+	$("#lighttext").val(light)
 	$("#lightslider").val(light)
 }
 
