@@ -20,12 +20,15 @@ function updatebox(){
 	$("#rgboutput").text(rgb)
 	$("#redtext").val(red)
 	$("#redrange").val(red)
+	$("#huetext").val(hue)
 	$("#hueslider").val(hue)
 	$("#greentext").val(green)
 	$("#greenrange").val(green)
+	$("#satwords").val(sat)
 	$("#satslider").val(sat)
 	$("#bluetext").val(blue)
 	$("#bluerange").val(blue)
+	$("#lightwords").val(light)
 	$("#lightslider").val(light)
 }
 
