@@ -21,9 +21,9 @@ function updatebox(){
 	
 	
 	$("#boxofcolors")[0].style["background-color"]= rgb
-	$("#hexoutput").text(rgb)
+	$("#hexoutput").text(hex)
 	$("#rgboutput").text(rgb)
-	$("#hsloutput").text(hex)
+	$("#hsloutput").text(hsl)
 	$("#redtext").val(red)
 	$("#redrange").val(red)
 	$("#huetext").val(hue)
