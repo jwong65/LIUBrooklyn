@@ -51,6 +51,44 @@ function updateHSL(state) {
             light: Math.round(l*100)};
 }
 
+function updateRGB(state) {
+	console.log("The RGB is now:", state)
+	var r =state.red
+	var g = state.green 
+	var b = state.blue
+	var h = state.hue
+	var s = state.sat
+	var l = state.light
+	
+	h/=360
+	s/=100
+	l/=100
+	
+	//If saturation is at 0.
+	if (s==0){
+		r = g= b= 1;
+	}
+	else{
+		var hue2rgb = function hue2rgb( p, q, t){
+			if (t<0) t+=1;
+			if (t>1) t-=1;
+			if (t<1/6) return p+ (q-p) *6*t;
+			if (t<1/2) return q;
+			if (t<2/3) return p +(q-p) * (2/3 -t)*6;
+			return p;
+		}
+		
+		
+        var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+        var p = 2 * l - q;
+        r = hue2rgb(p, q, h + 1/3);
+        g = hue2rgb(p, q, h);
+        b = hue2rgb(p, q, h - 1/3);
+
+	}
+		
+    return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+		}
 
 class ColorChooser extends React.Component {
     constructor(props) {
@@ -99,8 +137,10 @@ class ColorChooser extends React.Component {
                 max="360"
                 onChange={v => {
                     // TODO: must also change RGB according to for
-                    this.setState(prev => {return {hue:v}})
-                }}
+                    this.setState(prev => {
+					{return updateRGB({...prev, hue:v})
+                })
+				}}
                 />
 				
               <LabeledInputSlider
@@ -109,8 +149,10 @@ class ColorChooser extends React.Component {
                 max="100"
                 onChange={v => {
 					
-                    this.setState(prev => {return {sat:v}})
-                }}
+                    this.setState(prev => {
+						return updateRGB({...prev, sat:v})
+                })
+				}}
                 />
               <LabeledInputSlider
                 label="Light"
@@ -118,8 +160,10 @@ class ColorChooser extends React.Component {
                 max="100"
                 onChange={v => {
 					
-                    this.setState(prev => {return {light:v}})
-                }}
+                    this.setState(prev => {
+						return updateRGB ({...prev, light:v})
+                })
+				}}
                 />
                 <p>Red={this.state.red}, Green={this.state.green},Blue={this.state.blue}, Hue={this.state.hue}, Saturation={this.state.sat},
                   Light={this.state.light}</p>
