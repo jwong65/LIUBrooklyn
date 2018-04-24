@@ -88,7 +88,7 @@ function updateRGB(state) {
 	}
 		
     return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
-		}
+	}
 
 class ColorChooser extends React.Component {
     constructor(props) {
@@ -99,7 +99,7 @@ class ColorChooser extends React.Component {
         return
 		(var rgb ="rgb(" +this.state.red + "," +this.state.green+","+this.state.blue"+ ")"
             <div>
-			<div style={{width:250, height:250, background: rgb}} ></div>
+			
               <LabeledInputSlider
                 label="Red"
                 value={this.state.red}
