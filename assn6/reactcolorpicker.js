@@ -24,7 +24,7 @@ class LabeledInputSlider extends React.Component {
 }
 
 function updateHSL(state) {
-    console.log("The HSL is now:", state)
+    console.log("The HSL is now:", state.hue, state.sat, state.light)
     var r = state.red
     var g = state.green
     var b = state.blue
@@ -52,7 +52,7 @@ function updateHSL(state) {
 }
 
 function updateRGB(state) {
-	console.log("The RGB is now:", state)
+	console.log("The RGB is now:", state.red, state.green, state.blue)
 	var r =state.red
 	var g = state.green 
 	var b = state.blue
