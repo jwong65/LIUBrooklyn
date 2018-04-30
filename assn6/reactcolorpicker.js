@@ -66,7 +66,7 @@ function updateRGB(state) {
 	
 	//If saturation is at 0.
 	if (s==0){
-		r = g= b= 1;
+		r = g= b= l;
 	}
 	else{
 		var hue2rgb = function hue2rgb( p, q, t){
@@ -87,7 +87,10 @@ function updateRGB(state) {
 
 	}
 		
-    return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+    return {...state,
+			red: Math.round(r*255),
+			green: Math.round(g*255),
+			blue: Math.round(b*255)};
 	}
 
 class ColorChooser extends React.Component {
@@ -96,11 +99,10 @@ class ColorChooser extends React.Component {
         this.state = updateHSL({red:45, green: 95, blue: 145})
     }
     render() {
-		var rgb ="rgb(" +this.state.red + "," +this.state.green+","+this.state.blue"+ ")"
-        return
-		(
-		<div>
-        <div style={{width:500, height:500, background:rgb}} ></div>
+		var rgb ="rgb(" +this.state.red + "," +this.state.green+","+this.state.blue+ ")"
+        return (
+		  <div>
+             <div style={{width:250, height:250, background:rgb}} ></div>
 			
               <LabeledInputSlider
                 label="Red"
@@ -140,7 +142,7 @@ class ColorChooser extends React.Component {
                 onChange={v => {
                     // TODO: must also change RGB according to for
                     this.setState(prev => {
-					{return updateRGB({...prev, hue:v})
+					return updateRGB({...prev, hue:v})
                 })
 				}}
                 />
@@ -192,7 +194,7 @@ class Greeting extends React.Component {
         return (<p>Hello, {this.props.name}
                 (click {this.state.clickCount})
                 <button onClick={()=>this.click()}>Increment</button>
-*                </p>)
+                </p>)
     }
 }
 
@@ -201,6 +203,7 @@ class MyDemo extends React.Component {
         console.log("Working on it.")
         return (
             <div>
+			    <p>Hello world</p>
                 <ColorChooser/>
             </div>
         )
