@@ -128,7 +128,7 @@ function hsltoRgb( h, s, l){
 	
 	//If saturation is at 0.
 	if (s==0){
-		r = g= b= 1;
+		r = g= b= l;
 	}
 	else{
 		var hue2rgb = function hue2rgb( p, q, t){
