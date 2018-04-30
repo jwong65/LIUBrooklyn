@@ -203,7 +203,7 @@ class MyDemo extends React.Component {
         console.log("Working on it.")
         return (
             <div>
-			    <p>Hello world</p>
+
                 <ColorChooser/>
             </div>
         )
