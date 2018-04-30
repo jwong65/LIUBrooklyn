@@ -96,9 +96,11 @@ class ColorChooser extends React.Component {
         this.state = updateHSL({red:45, green: 95, blue: 145})
     }
     render() {
+		var rgb ="rgb(" +this.state.red + "," +this.state.green+","+this.state.blue"+ ")"
         return
-		(var rgb ="rgb(" +this.state.red + "," +this.state.green+","+this.state.blue"+ ")"
-            <div>
+		(
+		<div>
+        <div style={{width:500, height:500, background:rgb}} ></div>
 			
               <LabeledInputSlider
                 label="Red"
