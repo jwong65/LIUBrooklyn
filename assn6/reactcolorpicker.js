@@ -171,6 +171,7 @@ class ColorChooser extends React.Component {
                 />
                 <p>Red={this.state.red}, Green={this.state.green},Blue={this.state.blue}, Hue={this.state.hue}, Saturation={this.state.sat},
                   Light={this.state.light}</p>
+				  <p1> # {(this.state.red).toString(16).toUpperCase()}{(this.state.green).toString(16).toUpperCase()}{(this.state.blue).toString(16).toUpperCase()}</p1>
             </div>
         )
     }
@@ -209,6 +210,7 @@ class MyDemo extends React.Component {
         )
     }
 }
+
 
 ReactDOM.render(
     (<MyDemo/>),
