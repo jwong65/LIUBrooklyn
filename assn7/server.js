@@ -28,11 +28,29 @@ function homePage(req, res, next) {
     }
     else {                      // We don't know your name.
         output += "<form>Welcome! Who are you? " +
-            "<input type='text' name='name'></form>"
+            "<input type='text' name='name'> <br> Password <input type='password' name='Password'</form> <input type ='button' name='button'>"
     }
 
     res.end(output)
     console.log("REQUEST", req.query)
+    next()
+}
+
+
+
+function secretPage(req, res, next) {
+    console.log("COOKIES ON SECRET PAGE", req.cookies)
+    const sessionId = req.cookies.session
+    const username = sessions[sessionId]
+    if(username == "Chris") {
+        res.end("WELCOME SUPER ADMIN! You rule!!!")
+    }
+    else if(username) {
+        res.end("Welcome to your profile page, " + username)
+    }
+    else {
+        res.end("YOU must log in first")
+    }
     next()
 }
 
