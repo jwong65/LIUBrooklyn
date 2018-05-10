@@ -1,4 +1,5 @@
 const restify = require('restify');
+const cookieParser = require('restify-cookies');
 const uuidv4 = require('uuid/v4');
 
 var database = {}
@@ -91,7 +92,7 @@ function deleteContact(req, res, next) {
 }
 
 // Configuration and routing
-vavar server = restify.createServer();
+var server = restify.createServer();
 
 server.use(restify.plugins.queryParser());
 server.use(restify.plugins.acceptParser(server.acceptable));
@@ -101,27 +102,6 @@ server.use(cookieParser.parse);
 
 server.get('/', homePage);
 server.get('/secret', secretPage);
-server.get('/hello/:name', respond);
-server.head('/hello/:name', respond);
-// REST API for contacts
-server.get('/contacts/', listContacts)
-server.get('/contacts/:id', retrieveContact)
-server.post('/contacts/', createContact)
-server.del('/contacts/:id', deleteContact)
-
-
-server.listen(9005, function() {
-  console.log('%s listening at %s', server.name, server.url);
-r server = restify.createServer();
-
-server.use(restify.plugins.queryParser());
-server.use(restify.plugins.acceptParser(server.acceptable));
-server.use(restify.plugins.jsonp());
-server.use(restify.plugins.bodyParser({ mapParams: false }));
-
-server.get('/', homePage);
-server.post('/', homePage);
-//server.get('/', secret);
 server.get('/hello/:name', respond);
 server.head('/hello/:name', respond);
 // REST API for contacts
