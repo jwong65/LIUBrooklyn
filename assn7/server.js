@@ -23,30 +23,36 @@ addContact({name: "Diane", email: "djones@tesla.com", password: "dxcnvzn"})
 function homePage(req, res, next) {
     res.setHeader('content-type', 'text/html');
     var output = ""
-    if(req.query.name) { // We already know your name.
-        output += "Welcome, <b>" + req.query.name + "</b>" +
-            "<br><a href='/'>(Not you?)</a>" +
-			"<br><a href='/secret'>(Secret Page?)</a>"
-		
-    }
-    else {                      // We don't know your name.
+    if(!req.query.name) { // Switched around so this means that they don't know.
         output += "<form>Welcome! Who are you? " +
             "<input type='text' name='name'> <br> Password <input type='password' name='Password'</form> <input type ='submit' name='Log In Button'>"
+
+        res.clearCookie("session") // Remove on browser
+        // Remove on server
+        delete sessions[req.cookies.session]
+
+		
     }
-	 
+    else {                      // And this means we do.
+	 output += "Welcome, <b>" + req.query.name + "</b>" +
+            "<br><a href='/'>(Not you?)</a><br>" +
+            "<a href='/secret'>Profile page</a>"
+        const sessionId = uuidv4()
+        sessions[sessionId] = req.query.name
+        res.setCookie("session", sessionId)
+    }
+
     res.end(output)
     console.log("REQUEST", req.query)
     next()
 }
 
-
-
 function secretPage(req, res, next) {
     console.log("COOKIES ON SECRET PAGE", req.cookies)
     const sessionId = req.cookies.session
     const username = sessions[sessionId]
-    if(username == "Chris") {
-        res.end("WELCOME SUPER ADMIN! You rule!!!")
+    if(username == "Jason") {
+        res.end("Hello?")
     }
     else if(username) {
         res.end("Welcome to your profile page, " + username)
