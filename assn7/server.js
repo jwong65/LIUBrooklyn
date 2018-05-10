@@ -3,6 +3,7 @@ const cookieParser = require('restify-cookies');
 const uuidv4 = require('uuid/v4');
 
 var database = {}
+var sessions = {}
 
 function addContact(fields) {
     // Assign a random UUID
