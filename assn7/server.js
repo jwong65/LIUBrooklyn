@@ -26,7 +26,7 @@ function homePage(req, res, next) {
     var output = ""
     if(!req.query.name) { // Switched around so this means that they don't know.
         output += "<form>Welcome! Who are you? " +
-            "<input type='text' name='name'> <br> Password <input type='password' name='Password'</form> <input type ='submit' name='Log In Button'>"
+            "<input type='text' name='name'> <br> Password <input type='password' name='password'> <input type ='submit' name='Password'>"
 
         res.clearCookie("session") // Remove on browser
         // Remove on server
@@ -37,7 +37,7 @@ function homePage(req, res, next) {
     else {                      // And this means we do.
 	 output += "Welcome, <b>" + req.query.name + "</b>" +
             "<br><a href='/'>(Not you?)</a><br>" +
-            "<a href='/secret'>Profile page</a>"
+            "<a href='/secret'>(Secret Page?)</a>"
         const sessionId = uuidv4()
         sessions[sessionId] = req.query.name
         res.setCookie("session", sessionId)
