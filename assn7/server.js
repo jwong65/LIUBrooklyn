@@ -15,7 +15,6 @@ function addContact(fields) {
     return fields
 }
 
-
 addContact({name:"Alice", email:"alice.smith@gmail.com", password: "asfafdaf"})
 addContact({name: "Bob", email: "bob@microsoft.com", password: "sadgasdgasdg"})
 addContact({name: "Carl", email: "carl@apple.com", password: "anvcxn"})
