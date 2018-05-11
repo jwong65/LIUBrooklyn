@@ -18,6 +18,7 @@ addContact({name:"Alice", email:"alice.smith@gmail.com", password: "asfafdaf"})
 addContact({name: "Bob", email: "bob@microsoft.com", password: "sadgasdgasdg"})
 addContact({name: "Carl", email: "carl@apple.com", password: "anvcxn"})
 addContact({name: "Diane", email: "djones@tesla.com", password: "dxcnvzn"})
+addContact({name: "Jason", email: "blank@blank.com", password: "huhd"})
 
 
 
@@ -34,14 +35,29 @@ function homePage(req, res, next) {
 
 		
     }
-    else {                      // And this means we do.
-	 output += "Welcome, <b>" + req.query.name + "</b>" +
+	if (req.query.name)
+	{	output += "Welcome, <b>" + req.query.name + "</b>" +"<br>"
+	if (req.query.password!==req.query.name){
+		
+	output += "You've inputted the wrong password"}
+	else{          
+		output +="<br><a href='/'>(Not you?)</a><br>" +
+			"<a href='/secret'>(Secret Page?)</a>"
+        const sessionId = uuidv4()
+        sessions[sessionId] = req.query.name
+	res.setCookie("session", sessionId)}
+	
+	}
+    
+    else if (req.query.name=req.query.password)                      // And this means we do.
+	{output += "Welcome, <b>" + req.query.name + "</b>" +
             "<br><a href='/'>(Not you?)</a><br>" +
             "<a href='/secret'>(Secret Page?)</a>"
         const sessionId = uuidv4()
         sessions[sessionId] = req.query.name
         res.setCookie("session", sessionId)
-    }
+	}
+	
 
     res.end(output)
     console.log("REQUEST", req.query)
@@ -63,6 +79,7 @@ function secretPage(req, res, next) {
     }
     next()
 }
+
 
 function respond(req, res, next) {
     var obj = {message: 'hello ' + req.params.name,
