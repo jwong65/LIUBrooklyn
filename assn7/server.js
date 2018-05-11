@@ -5,6 +5,7 @@ const uuidv4 = require('uuid/v4');
 var database = {}
 var sessions = {}
 
+
 function addContact(fields) {
     // Assign a random UUID
     var uuid = uuidv4()
@@ -13,6 +14,7 @@ function addContact(fields) {
     database[uuid] = fields
     return fields
 }
+
 
 addContact({name:"Alice", email:"alice.smith@gmail.com", password: "asfafdaf"})
 addContact({name: "Bob", email: "bob@microsoft.com", password: "sadgasdgasdg"})
@@ -35,12 +37,13 @@ function homePage(req, res, next) {
 
 		
     }
-	if (req.query.name)
-	{	output += "Welcome, <b>" + req.query.name + "</b>" +"<br>"
+	if (req.query.name){
+	{	output += "Welcome, <b>" + req.query.name + "</b>" +"<br>"}
+	
 	if (req.query.password!==req.query.name){
 		
 	output += "You've inputted the wrong password"}
-	else{          
+	else if (req.query.password==req.query.name){          
 		output +="<br><a href='/'>(Not you?)</a><br>" +
 			"<a href='/secret'>(Secret Page?)</a>"
         const sessionId = uuidv4()
