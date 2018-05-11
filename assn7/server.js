@@ -26,7 +26,7 @@ function homePage(req, res, next) {
     var output = ""
     if(!req.query.name) { // Switched around so this means that they don't know.
         output += "<form>Welcome! Who are you? " +
-            "<input type='text' name='name'> <br> Password <input type='password' name='password'> <input type ='submit' name='Password'>"
+            "<input type='text' name='name'> <br> Password <input type='password' name='password'> <input type ='submit' name=''>"
 
         res.clearCookie("session") // Remove on browser
         // Remove on server
